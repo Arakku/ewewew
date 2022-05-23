@@ -1,6 +1,10 @@
+<?php
+$param = (isset($_GET['load']) && $_GET['load'] != '') ? $_GET['load'] : '';
+?>
 <!Doctype html>
 <html>
 <head>
+ <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
  <title> My Recipe Homepage </title>
  </head>
  
@@ -13,6 +17,29 @@
  <li> <a href="CLE1MT/CASE STUDY WEBSITE (POVERTY)/index.html"> MIDTERM</a></li>
  <li><a href="LT4/WEB TOPOGRAPHY/topography.html"> LEARNING TASK 4 </a></li>
  </ul>
+  
+  </div>
+           <div id="content">
+            <?php
+               switch($param){
+                   case 'news':
+                       include 'news.php';
+                   break;
+                   case 'contact':
+                        include 'contact.php';
+                   break;
+                   case 'about':
+                       include 'about.php';
+                   break;
+                   default:
+                        include 'home.php';
+                   break;
+               }
+            ?>
+           </div>
+        </div>
  
  </body>
 </html>
+
+
